@@ -1,6 +1,6 @@
 services:
   backend:
-    image: arpithanms/to-do-app-backend:latest
+    build: ./backend
     environment:
       DATABASE_URL: postgresql://postgres:Setup@db:5432/todo_db
     depends_on:
@@ -9,7 +9,7 @@ services:
       - "5000:5000"
 
   frontend:
-    image: arpithanms/to-do-app-frontend:latest
+    build: ./frontend
     ports:
       - "80:80"
     depends_on:
